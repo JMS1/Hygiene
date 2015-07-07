@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Data.Entity.Migrations;
+using System.Data.Entity;
 
 namespace Hygiene.Models
 {
@@ -19,9 +21,9 @@ namespace Hygiene.Models
         {
         }
 
-        public System.Data.Entity.DbSet<HygieneBO.Restaurant> Restaurants { get; set; }
-
-        //public System.Data.Entity.DbSet<HygieneBO.District> Districts { get; set; }
+        public DbSet<HygieneBO.Restaurant> Restaurants { get; set; }
+        public DbSet<HygieneBO.Version> Versions{ get; set; }
+        public DbSet<HygieneBO.District> Districts{ get; set; }
     
     }
 }

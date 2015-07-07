@@ -209,6 +209,18 @@
     <Compile Include="Migrations\201507031145081_initial.Designer.cs">
       <DependentUpon>201507031145081_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507071219421_AddedImageColumnToTable.cs" />
+    <Compile Include="Migrations\201507071219421_AddedImageColumnToTable.Designer.cs">
+      <DependentUpon>201507071219421_AddedImageColumnToTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507071226550_addedVersioAndDistrictTables.cs" />
+    <Compile Include="Migrations\201507071226550_addedVersioAndDistrictTables.Designer.cs">
+      <DependentUpon>201507071226550_addedVersioAndDistrictTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507071322343_addedRatingKeyToRestaurantsTable.cs" />
+    <Compile Include="Migrations\201507071322343_addedRatingKeyToRestaurantsTable.Designer.cs">
+      <DependentUpon>201507071322343_addedRatingKeyToRestaurantsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -247,6 +259,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="xml1\FHRS501en-GB.xml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -294,6 +307,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507031145081_initial.resx">
       <DependentUpon>201507031145081_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507071219421_AddedImageColumnToTable.resx">
+      <DependentUpon>201507071219421_AddedImageColumnToTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507071226550_addedVersioAndDistrictTables.resx">
+      <DependentUpon>201507071226550_addedVersioAndDistrictTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507071322343_addedRatingKeyToRestaurantsTable.resx">
+      <DependentUpon>201507071322343_addedRatingKeyToRestaurantsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
