@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HygieneBO
 {
-    class District
+    public class District
     {
         public int DistrictId { get; set; }
         public string Name { get; set; }

@@ -8,3 +8,13 @@ c:\Users\Jim Bob\documents\visual studio 2013\Projects\Hygiene\HygieneBO\bin\Deb
 c:\Users\Jim Bob\documents\visual studio 2013\Projects\Hygiene\HygieneBO\bin\Debug\EntityFramework.SqlServer.dll
 c:\Users\Jim Bob\documents\visual studio 2013\Projects\Hygiene\HygieneBO\bin\Debug\EntityFramework.xml
 c:\Users\Jim Bob\documents\visual studio 2013\Projects\Hygiene\HygieneBO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\HygieneBO.dll.config
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\HygieneBO.dll
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\HygieneBO.pdb
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\EntityFramework.dll
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\EntityFramework.xml
+C:\Dev\Hygiene\Hygiene\HygieneBO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dev\Hygiene\Hygiene\HygieneBO\obj\Debug\HygieneBO.csprojResolveAssemblyReference.cache
+C:\Dev\Hygiene\Hygiene\HygieneBO\obj\Debug\HygieneBO.dll
+C:\Dev\Hygiene\Hygiene\HygieneBO\obj\Debug\HygieneBO.pdb

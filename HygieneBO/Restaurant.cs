@@ -20,9 +20,9 @@ namespace HygieneBO
         public string AddressLine3 { get; set; }
         public string AddressLine4 { get; set; }
         public string PostCode { get; set; }
+        public string RatingKey { get; set; }
         public int? RatingValue { get; set; }
         public string RatingDate { get; set; }
-        public int? HygieneScore { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
         public string ImagePath { get; set; }
