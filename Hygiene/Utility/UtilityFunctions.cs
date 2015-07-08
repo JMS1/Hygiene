@@ -8,7 +8,13 @@ namespace Hygiene.Utility
 {
     public static class UtilityFunctions
     {
-
+        public static int GetFHRSIDValue(XElement n)
+        {
+            int outputValue = 0;
+            if (n.Element("FHRSID") != null)
+                outputValue = (int)n.Element("FHRSID");
+            return outputValue;
+        }
         public static string Addr1(XElement n)
         {
             string addre1 = "";
@@ -43,6 +49,46 @@ namespace Hygiene.Utility
             if (n.Element("PostCode") != null)
                 postC = (string)n.Element("PostCode");
             return postC;
+        }
+        public static int GetRatingValue(XElement n)
+        {
+            int number;
+            int rating;
+            bool result = false;
+            result = Int32.TryParse(n.Element("RatingValue").Value, out number);
+            if (result == true)
+            {
+                rating = number;
+            }
+            return result ? number : 0;
+        }
+        public static string GetBusinessName(XElement n)
+        {
+            string outputValue = "";
+            if (n.Element("BusinessName") != null)
+                outputValue = (string)n.Element("BusinessName");
+            return outputValue;
+        }
+        public static string GetRatingDate(XElement n)
+        {
+            string outputValue = "";
+            if (n.Element("RatingDate") != null)
+                outputValue = (string)n.Element("RatingDate");
+            return outputValue;
+        }
+        public static double GetLongitude(XElement n)
+        {
+            double outputValue = 0.000000;
+            if (n.Element("Geocode").Element("Longitude") != null)
+                outputValue = (double)n.Element("Geocode").Element("Longitude");
+            return outputValue;
+        }
+        public static double GetLatitude(XElement n)
+        {
+            double outputValue = 0.0000000;
+            if (n.Element("Geocode").Element("Latitude") != null)
+                outputValue = (double)n.Element("Geocode").Element("Latitude");
+            return outputValue;
         }
         public static string Image(XElement n)
         {
@@ -102,17 +148,129 @@ namespace Hygiene.Utility
                     imagePath = "No image found!!!";
                     break;
             }
-
-            return imagePath;
-
+        return imagePath;
         }
-        public static XDocument BuildXDoc()
+        public static int SetDistrictId(XElement n)
         {
-            var xmlDocument = new XDocument();
-            xmlDocument = XDocument.Load(HttpContext.Current.Server.MapPath("~/Xml/FHRS501en-GB.xml"));
+            int districtId = 0;
+            string authorityName = "";
 
-            return xmlDocument;
+            if (n.Element("LocalAuthorityName") != null)
+                authorityName = (string)n.Element("LocalAuthorityName");
+
+            switch (authorityName)
+            {
+                case "Barking and Dagenham":
+                    districtId = 1;
+                    break;
+                case "Barnet":
+                    districtId = 2;
+                    break;
+                case "Bexley":
+                    districtId = 3;
+                    break;
+                case "Brent":
+                    districtId = 4;
+                    break;
+                case "Bromley":
+                    districtId = 5;
+                    break;
+                case "Camden":
+                    districtId = 6;
+                    break;
+                case "City of London Corporation":
+                    districtId = 7;
+                    break;
+                case "Croydon":
+                    districtId = 8;
+                    break;
+                case "Ealing":
+                    districtId = 9;
+                    break;
+                case "Enfield":
+                    districtId = 10;
+                    break;
+                case "Greenwich":
+                    districtId = 11;
+                    break;
+                case "Hackney":
+                    districtId = 12;
+                    break;
+                case "Hammersmith and Fulham":
+                    districtId = 13;
+                    break;
+                case "Haringey":
+                    districtId = 14;
+                    break;
+                case "Harrow":
+                    districtId = 15;
+                    break;
+                case "Havering":
+                    districtId = 16;
+                    break;
+                case "Hillingdon":
+                    districtId = 17;
+                    break;
+                case "Hounslow":
+                    districtId = 18;
+                    break;
+                case "Islington":
+                    districtId = 19;
+                    break;
+                case "Kensington and Chelsea":
+                    districtId = 20;
+                    break;
+                case "Kingston-Upon-Thames":
+                    districtId = 21;
+                    break;
+                case "Lambeth":
+                    districtId = 22;
+                    break;
+                case "Lewisham":
+                    districtId = 23;
+                    break;
+                case "Merton":
+                    districtId = 24;
+                    break;
+                case "Newham":
+                    districtId = 25;
+                    break;
+                case "Redbridge":
+                    districtId = 26;
+                    break;
+                case "Richmond-Upon-Thames":
+                    districtId = 27;
+                    break;
+                case "Southwark":
+                    districtId = 28;
+                    break;
+                case "Sutton":
+                    districtId = 29;
+                    break;
+                case "Tower Hamlets":
+                    districtId = 30;
+                    break;
+                case "Waltham Forest":
+                    districtId = 31;
+                    break;
+                case "Wandsworth":
+                    districtId = 32;
+                    break;
+                case "Westminster":
+                    districtId = 33;
+                    break;
+                default:
+                    districtId = 0;
+                    break;
+            }
+            return districtId;
         }
-
+        public static string GetRatingKey(XElement n)
+        {
+            string outputValue = "";
+            if (n.Element("RatingKey") != null)
+                outputValue = (string)n.Element("RatingKey");
+            return outputValue;
+        }
     }
 }

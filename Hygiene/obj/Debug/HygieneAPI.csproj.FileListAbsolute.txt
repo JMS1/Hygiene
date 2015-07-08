@@ -135,3 +135,6 @@ C:\Dev\Hygiene\Hygiene\Hygiene\obj\Debug\Hygiene.pdb
 C:\Dev\Hygiene\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedImageColumnToTable.resources
 C:\Dev\Hygiene\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedVersioAndDistrictTables.resources
 C:\Dev\Hygiene\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedRatingKeyToRestaurantsTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedImageColumnToTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedVersioAndDistrictTables.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedRatingKeyToRestaurantsTable.resources
