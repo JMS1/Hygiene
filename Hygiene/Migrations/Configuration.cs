@@ -1,5 +1,6 @@
 namespace Hygiene.Migrations
 {
+    using Hygiene.Models;
     using Hygiene.Utility;
     using HygieneBO;
     using System;
@@ -20,26 +21,46 @@ namespace Hygiene.Migrations
         {
             XDocument xmlDoc = UtilityFunctions.BuildXDoc();
 
-            foreach (XElement xe in xmlDoc.Descendants("EstablishmentDetail")) {
-                context.Restaurants.AddOrUpdate(r => r.BusinessName, 
-                    new Restaurant {
-                    FHRSID = (int)xe.Element("FHRSID"),
-                    BusinessName = xe.Element("BusinessName").Value,
-                    AddressLine1 = UtilityFunctions.Addr1(xe),
-                    AddressLine2 = UtilityFunctions.Addr2(xe),
-                    PostCode = UtilityFunctions.PstCde(xe),
-                    LocalAuthorityName = UtilityFunctions.AuthName(xe),
-                    ImagePath = UtilityFunctions.Image(xe)
+            var seedRestaurants = from r in xmlDoc.Descendants("EstablishmentDetail")
+                                  select new Restaurant
+                                  {
+                                      FHRSID = (int)r.Element("FHRSID"),
+                                      BusinessName = r.Element("BusinessName").Value,
+                                      AddressLine1 = r.Element("AddressLine1").Value,
+                                      AddressLine2 = r.Element("AddressLine2").Value,
+                                      AddressLine3 = r.Element("AddressLine3").Value,
+                                      AddressLine4 = r.Element("AddressLine4").Value,
+                                      PostCode = r.Element("PostCode").Value,
+                                      RatingValue = (int)r.Element("RatingValue"),
+                                      RatingDate = r.Element("RatingDate").Value,
+                                      HygieneScore = (int)r.Element("Scores").Element("Hygiene"),
+                                      Longitude = (double)r.Element("GeoCode").Element("Longitude"),
+                                      Latitude = (double)r.Element("GeoCode").Element("Latitude"),
+                                      //ImagePath = r.Element().Value
+
+                                  };
+            HygieneContext db = new HygieneContext();
+
+
+            //foreach (XElement xe in xmlDoc.Descendants("EstablishmentDetail")) {
+            //    context.Restaurants.AddOrUpdate(r =>  new Restaurant {
+            //        FHRSID = (int)xe.Element("FHRSID"),
+            //        BusinessName = xe.Element("BusinessName").Value,
+            //        AddressLine1 = UtilityFunctions.Addr1(xe),
+            //        AddressLine2 = UtilityFunctions.Addr2(xe),
+            //        PostCode = UtilityFunctions.PstCde(xe),
+            //        D = UtilityFunctions.AuthName(xe),
+            //        ImagePath = UtilityFunctions.Image(xe)
                     
-                    },
+            //        },
 
-                    )
+            //        )
 
-            }
+            //}
 
-            context.Restaurants.AddOrUpdate(r => r.BusinessName,
-                new Restaurant {},
-                )
+            //context.Restaurants.AddOrUpdate(r => r.BusinessName,
+            //    new Restaurant {},
+            //    )
 
             //  This method will be called after migrating to the latest version.
 
