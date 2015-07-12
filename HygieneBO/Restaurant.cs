@@ -11,7 +11,6 @@ namespace HygieneBO
         public int RestaurantId { get; set; }
 
         public virtual int? DistrictId { get; set; }
-        public virtual int? VersionId { get; set; }
 
         public int FHRSID { get; set; }
         public string BusinessName { get; set; }

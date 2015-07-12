@@ -138,3 +138,16 @@ C:\Dev\Hygiene\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedRatingKeyToRest
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedImageColumnToTable.resources
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedVersioAndDistrictTables.resources
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.addedRatingKeyToRestaurantsTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.Core.dll
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.dll
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Quartz.dll
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.pdb
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.xml
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.Core.pdb
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Common.Logging.Core.xml
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Quartz.pdb
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\bin\Quartz.xml
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedFileLocationFieldToDistrictTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedDateFieldToVersionTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.RenamedVersionTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.resources

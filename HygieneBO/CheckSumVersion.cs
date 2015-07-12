@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace HygieneBO
 {
-    public class Version
+    public class CheckSumVersion
     {
-        public int VersionId { get; set; }
+        public int CheckSumVersionId { get; set; }
         public string CheckSum { get; set; }
+        public DateTime DateChanged { get; set; }
     }
 }

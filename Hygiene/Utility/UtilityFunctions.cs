@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Xml.Linq;
 
@@ -271,6 +273,52 @@ namespace Hygiene.Utility
             if (n.Element("RatingKey") != null)
                 outputValue = (string)n.Element("RatingKey");
             return outputValue;
+        }
+
+        public static XDocument BuildXDoc()
+        {
+            XDocument xmlDocu = XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS501en-GB.xml");
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS502en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS503en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS504en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS505en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS506en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS508en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS507en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS509en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS510en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS511en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS512en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS513en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS514en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS515en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS516en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS517en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS518en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS519en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS520en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS521en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS522en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS523en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS524en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS525en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS526en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS527en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS528en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS529en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS530en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS531en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS532en-GB.xml").Root.Elements());
+            xmlDocu.Root.Add(XDocument.Load("http://ratings.food.gov.uk/OpenDataFiles/FHRS533en-GB.xml").Root.Elements());
+
+            return xmlDocu;
+        }
+
+        public static string GenerateCheckSum(string data)
+        {
+            MD5 md5 = MD5.Create();
+            byte[] hashData = md5.ComputeHash(Encoding.Default.GetBytes(data));
+            return BitConverter.ToString(hashData).Replace("-", "").ToLower();
         }
     }
 }

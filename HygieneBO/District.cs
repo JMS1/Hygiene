@@ -9,6 +9,11 @@ namespace HygieneBO
     public class District
     {
         public int DistrictId { get; set; }
+
+        public virtual int? CheckSumVersionId { get; set; }
         public string Name { get; set; }
+        public string FileLocation { get; set; }
+        
+
     }
 }
