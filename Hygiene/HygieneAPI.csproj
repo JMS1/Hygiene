@@ -246,6 +246,18 @@
     <Compile Include="Migrations\201507101014391_removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.Designer.cs">
       <DependentUpon>201507101014391_removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507131338293_RemovedCheckSumTable.cs" />
+    <Compile Include="Migrations\201507131338293_RemovedCheckSumTable.Designer.cs">
+      <DependentUpon>201507131338293_RemovedCheckSumTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507131341450_AddedCheckSumStringAndDateChangedToDistrictTable.cs" />
+    <Compile Include="Migrations\201507131341450_AddedCheckSumStringAndDateChangedToDistrictTable.Designer.cs">
+      <DependentUpon>201507131341450_AddedCheckSumStringAndDateChangedToDistrictTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507131351074_MadeCheckSumChangedFieldNullable.cs" />
+    <Compile Include="Migrations\201507131351074_MadeCheckSumChangedFieldNullable.Designer.cs">
+      <DependentUpon>201507131351074_MadeCheckSumChangedFieldNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -357,6 +369,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507101014391_removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.resx">
       <DependentUpon>201507101014391_removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507131338293_RemovedCheckSumTable.resx">
+      <DependentUpon>201507131338293_RemovedCheckSumTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507131341450_AddedCheckSumStringAndDateChangedToDistrictTable.resx">
+      <DependentUpon>201507131341450_AddedCheckSumStringAndDateChangedToDistrictTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507131351074_MadeCheckSumChangedFieldNullable.resx">
+      <DependentUpon>201507131351074_MadeCheckSumChangedFieldNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

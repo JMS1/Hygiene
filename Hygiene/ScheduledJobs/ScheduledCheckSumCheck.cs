@@ -23,7 +23,7 @@ namespace Hygiene.Utility
 
             //    if (db.)
             //}
-            var newCheckSums = new List<CheckSumVersion>();
+            //var newCheckSums = new List<CheckSumVersion>();
 
             foreach (District d in db.Districts)
             {
@@ -35,47 +35,47 @@ namespace Hygiene.Utility
 
 
 
-                foreach (CheckSumVersion v in db.Versions)
-                {
+                //foreach (CheckSumVersion v in db.Versions)
+                //{
 
-                    if (v.CheckSum != liveCheckSum)
-                    {
-                        foreach (District e in db.Districts)
-                        {
-                                e.CheckSumVersionId = 
-                        }
+                    //if (v.CheckSum != liveCheckSum)
+                    //{
+                    //    foreach (District e in db.Districts)
+                    //    {
+                    //            e.CheckSumVersionId = 
+                    //    }
 
 
-                        var versionQuery = from restaurant in db.Restaurants
-                                           join version in db.Versions
-                                           on restaurant.VersionId equals version.CheckSumVersionId
-                                           select restaurant;
+                    //    var versionQuery = from restaurant in db.Restaurants
+                    //                       join version in db.Versions
+                    //                       on restaurant.VersionId equals version.CheckSumVersionId
+                    //                       select restaurant;
 
                        
 
-                        //create a list of changed 
-                        CheckSumVersion newVersion = new CheckSumVersion();
-                        newVersion.CheckSum = liveCheckSum;
-                        newVersion.DateChanged = DateTime.Now;
-                        newCheckSums.Add(newVersion);
-                        db.Versions.AddRange(newCheckSums);
+                    //    //create a list of changed 
+                    //    CheckSumVersion newVersion = new CheckSumVersion();
+                    //    newVersion.CheckSum = liveCheckSum;
+                    //    newVersion.DateChanged = DateTime.Now;
+                    //    newCheckSums.Add(newVersion);
+                    //    db.Versions.AddRange(newCheckSums);
 
-                        using (db)
-                        {
-                            db.Restaurants
-                                //.Where()
-                                .ToList()
-                                .ForEach(r =>
-                                            {
-                                                r.VersionId = newVersion.CheckSumVersionId;
-                                            });
-                        }
+                    //    using (db)
+                    //    {
+                    //        db.Restaurants
+                    //            //.Where()
+                    //            .ToList()
+                    //            .ForEach(r =>
+                    //                        {
+                    //                            r.VersionId = newVersion.CheckSumVersionId;
+                    //                        });
+                    //    }
 
 
-                    }
-                    else
-                    { }
-                }
+                    //}
+                    //else
+                    //{ }
+            //    }
             }
             
             db.SaveChanges();
