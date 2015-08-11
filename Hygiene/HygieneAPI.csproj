@@ -269,6 +269,7 @@
     <Compile Include="ScheduledJobs\Scheduler.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ScheduledJobs\ScheduledCheckSumCheck.cs" />
+    <Compile Include="Utility\EmailInfo.cs" />
     <Compile Include="Utility\UtilityFunctions.cs" />
   </ItemGroup>
   <ItemGroup>

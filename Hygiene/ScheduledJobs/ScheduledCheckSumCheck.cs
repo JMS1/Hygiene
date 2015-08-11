@@ -6,6 +6,9 @@ using Quartz;
 using Hygiene.Models;
 using HygieneBO;
 using System.Xml.Linq;
+using System.Net.Mail;
+using System.Net;
+using Hygiene.Utility;
 
 namespace Hygiene.Utility
 {
@@ -13,7 +16,8 @@ namespace Hygiene.Utility
     {
         public void Execute(IJobExecutionContext context)
         {
-            List<string> ChangedRestaurants = new List<string>();
+            string updatedRestaurantsemailBody = "Updated Restaurants" + Environment.NewLine;
+            string newRestaurantsemailBody = "New Restaurants" + Environment.NewLine;
             HygieneContext db = new HygieneContext();
 
             foreach (District d in db.Districts)
@@ -27,8 +31,6 @@ namespace Hygiene.Utility
                 {
                     d.CheckSum = liveCheckSum;
                     d.CheckSumChanged = DateTime.Now;
-
-                    ChangedRestaurants.Add(d.Name);
 
                     var xmlRestaurants = from x in xmlDoc.Descendants("EstablishmentDetail")
                                          where UtilityFunctions.AuthName(x) == d.Name
@@ -71,7 +73,8 @@ namespace Hygiene.Utility
                             var district = db.Districts.Single(di => di.DistrictId == xmlDistrictId);
                             district.CheckSum = liveCheckSum;
                             district.CheckSumChanged = DateTime.Now;
-                            ChangedRestaurants.Add(xmlRestaurant.BusinessName);
+
+                            updatedRestaurantsemailBody += restaurant.BusinessName + "  " + restaurant.FHRSID + "  " + restaurant.DistrictId + Environment.NewLine;
 
                         }
                         else
@@ -93,14 +96,13 @@ namespace Hygiene.Utility
                             restaurant.ImagePath = xmlRestaurant.ImagePath;
                             db.Restaurants.Add(restaurant);
 
-
+                            newRestaurantsemailBody += restaurant.BusinessName + "  " + restaurant.FHRSID + "  " + restaurant.DistrictId + Environment.NewLine; 
                         }
                     }
                 }
             }
             try
             {
-
                 db.SaveChanges();
             }
             catch (Exception ex)
@@ -108,8 +110,25 @@ namespace Hygiene.Utility
                 throw new Exception("message", ex);
             }
 
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential(EmailInfo.emailAddress.Address, EmailInfo.password),
+                Timeout = 20000
+            };
 
+            using (var message = new MailMessage(EmailInfo.emailAddress, EmailInfo.emailAddress)
+            {
+                Subject = EmailInfo.subject,
+                Body = newRestaurantsemailBody + Environment.NewLine + updatedRestaurantsemailBody
 
+            })
+            {
+                smtp.Send(message);
+            }
         }
     }
 }
