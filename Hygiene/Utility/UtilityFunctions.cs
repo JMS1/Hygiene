@@ -10,6 +10,20 @@ namespace Hygiene.Utility
 {
     public static class UtilityFunctions
     {
+        public static int Id(XElement n)
+        {
+            int id;
+
+            if (n.Element("FHRSID") != null)
+            {
+                id = (int)n.Element("FHRSID");
+            }
+            else
+            {
+                id = 1;
+            }
+            return id;
+        }
         public static int GetFHRSIDValue(XElement n)
         {
             int outputValue = 0;
@@ -45,12 +59,26 @@ namespace Hygiene.Utility
                 addre4 = (string)n.Element("AddressLine4");
             return addre4;
         }
+        public static int HScores(XElement n)
+        {
+            int scoreVal = 0;
+            if (n.Element("Scores").HasElements)
+                scoreVal = (int)n.Element("Scores").Element("Hygiene");
+            return scoreVal;
+        }
         public static string PstCde(XElement n)
         {
             string postC = "";
             if (n.Element("PostCode") != null)
                 postC = (string)n.Element("PostCode");
             return postC;
+        }
+        public static string AuthName(XElement n)
+        {
+            string authName = "";
+            if (n.Element("LocalAuthorityName") != null)
+                authName = (string)n.Element("LocalAuthorityName");
+            return authName;
         }
         public static int GetRatingValue(XElement n)
         {
@@ -320,5 +348,121 @@ namespace Hygiene.Utility
             byte[] hashData = md5.ComputeHash(Encoding.Default.GetBytes(data));
             return BitConverter.ToString(hashData).Replace("-", "").ToLower();
         }
+        public static int SetDistrictIdFromString(string n)
+        {
+            int districtId = 0;
+            string authorityName = "";
+
+            if (n != null)
+                authorityName = n;
+
+            switch (authorityName)
+            {
+                case "Barking and Dagenham":
+                    districtId = 1;
+                    break;
+                case "Barnet":
+                    districtId = 2;
+                    break;
+                case "Bexley":
+                    districtId = 3;
+                    break;
+                case "Brent":
+                    districtId = 4;
+                    break;
+                case "Bromley":
+                    districtId = 5;
+                    break;
+                case "Camden":
+                    districtId = 6;
+                    break;
+                case "City of London Corporation":
+                    districtId = 7;
+                    break;
+                case "Croydon":
+                    districtId = 8;
+                    break;
+                case "Ealing":
+                    districtId = 9;
+                    break;
+                case "Enfield":
+                    districtId = 10;
+                    break;
+                case "Greenwich":
+                    districtId = 11;
+                    break;
+                case "Hackney":
+                    districtId = 12;
+                    break;
+                case "Hammersmith and Fulham":
+                    districtId = 13;
+                    break;
+                case "Haringey":
+                    districtId = 14;
+                    break;
+                case "Harrow":
+                    districtId = 15;
+                    break;
+                case "Havering":
+                    districtId = 16;
+                    break;
+                case "Hillingdon":
+                    districtId = 17;
+                    break;
+                case "Hounslow":
+                    districtId = 18;
+                    break;
+                case "Islington":
+                    districtId = 19;
+                    break;
+                case "Kensington and Chelsea":
+                    districtId = 20;
+                    break;
+                case "Kingston-Upon-Thames":
+                    districtId = 21;
+                    break;
+                case "Lambeth":
+                    districtId = 22;
+                    break;
+                case "Lewisham":
+                    districtId = 23;
+                    break;
+                case "Merton":
+                    districtId = 24;
+                    break;
+                case "Newham":
+                    districtId = 25;
+                    break;
+                case "Redbridge":
+                    districtId = 26;
+                    break;
+                case "Richmond-Upon-Thames":
+                    districtId = 27;
+                    break;
+                case "Southwark":
+                    districtId = 28;
+                    break;
+                case "Sutton":
+                    districtId = 29;
+                    break;
+                case "Tower Hamlets":
+                    districtId = 30;
+                    break;
+                case "Waltham Forest":
+                    districtId = 31;
+                    break;
+                case "Wandsworth":
+                    districtId = 32;
+                    break;
+                case "Westminster":
+                    districtId = 33;
+                    break;
+                default:
+                    districtId = 0;
+                    break;
+            }
+            return districtId;
+        }
     }
+
 }

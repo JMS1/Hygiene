@@ -11,7 +11,7 @@ namespace Hygiene.ScheduledJobs
 {
     public class Scheduler
     {
-        public static void JobStart()
+        public static void Start()
         {
             IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
 

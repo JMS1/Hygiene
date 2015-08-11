@@ -151,3 +151,6 @@ C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedDateFieldToVersionTable.resources
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.RenamedVersionTable.resources
 C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.removedVersionIdFromRestaurantTableAddedCheckSumVersionToDistrictTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.RemovedCheckSumTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.AddedCheckSumStringAndDateChangedToDistrictTable.resources
+C:\Users\Jim Bob\Documents\Visual Studio 2013\Projects\Hygiene\Hygiene\obj\Debug\Hygiene.Migrations.MadeCheckSumChangedFieldNullable.resources

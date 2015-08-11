@@ -19,7 +19,7 @@ namespace Hygiene
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Scheduler.Start();
+            Scheduler.Start();
         }
     }
 }
