@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="main-page-backdrop">
+    <div class="container">
+
+        <div class="row margin-top-100">
+            <div class="homepage-text">
+                <img src="~/Images/fhrs.png" />
+            </div>
+            <div class="row">
+                <div class="homepage-text">
+                    For London
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="test">
+                    @using (Html.BeginForm("SearchResults", "Home", FormMethod.Post))
+                    {
+                        <div class="row">
+                            <div id="search-content">
+                                <div class="col-md-10">
+                                    <input id="restaurantString" name="restaurantString" class="form-control input-lg" type="text" placeholder="Please enter restaurant name">
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" value="Search" class="btn btn-primary btn-lg">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>  
+
+    @section scripts {
+
+        <section class="scripts">
+
+            <script type="text/javascript">
+            $(document).ready(function () {
+                $("#restaurantString").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "/Home/Search",
+                            type: "POST",
+                            dataType: "json",
+                            data: { term: request.term },
+                            success: function (data) {
+                                response($.map(data, function (item) {
+
+                                    return {
+                                        label: item.value,
+                                        value: item.label
+                                    };
+                                }
+                                ))
+                            }
+                        })
+                    },
+                    messages: {
+                        noResults: "", results: ""
+                    }
+                });
+            })
+            </script>
+        </section>
+    }
+

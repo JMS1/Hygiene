@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HygieneAPI", "Hygiene\Hygie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HygieneBO", "HygieneBO\HygieneBO.csproj", "{38DBC9D9-161A-47A4-94F6-4F07FD773FE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HygieneMVC", "HygieneMVC\HygieneMVC.csproj", "{72AE77DE-D1D1-4B90-8527-E1D3CE7A793D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{38DBC9D9-161A-47A4-94F6-4F07FD773FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38DBC9D9-161A-47A4-94F6-4F07FD773FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38DBC9D9-161A-47A4-94F6-4F07FD773FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72AE77DE-D1D1-4B90-8527-E1D3CE7A793D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72AE77DE-D1D1-4B90-8527-E1D3CE7A793D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72AE77DE-D1D1-4B90-8527-E1D3CE7A793D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72AE77DE-D1D1-4B90-8527-E1D3CE7A793D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

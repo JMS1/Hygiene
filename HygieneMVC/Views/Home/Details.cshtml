@@ -1,0 +1,112 @@
+﻿@model HygieneMVC.Models.Restaurant
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="row" style=" padding-top:20px;">
+
+        <div class="col-md-10">
+            <div class="heading">@Model.BusinessName</div>
+        </div>
+        <div class="col-md-2">
+            <img src="@Url.Content(Model.ImagePath)" alt="Image" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="heading-info">@Model.AddressLine1</div>
+
+
+
+            <div class="heading-info">@Model.AddressLine2</div>
+            <div class="heading-info">@Model.AddressLine3</div>
+            <div class="heading-info">@Model.AddressLine4</div>
+            <div class="heading-info">@Model.PostCode</div>
+
+        </div>
+        <div class="col-md-2">
+            <div class="heading-info">Reviewed on @Model.RatingDate</div>
+            @*<div class="heading-info">by @Model.LocalAuthorityName council</div>*@
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="map-container" style="height:500px"></div>
+        </div>
+
+    </div>
+
+</div>
+<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+
+@section scripts {
+    <section class="scripts">
+
+        <script type="text/javascript">
+
+    <!-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
+    $(document).ready(function () {
+        Initialize();
+    });
+
+    // Where all the fun happens
+    function Initialize() {
+
+        // Google has tweaked their interface somewhat - this tells the api to use that new UI
+        google.maps.visualRefresh = true;
+        var lat = @ViewData["Latitude"];
+        var lon = @ViewData["Longitude"];
+        var Loc = new google.maps.LatLng(lat, lon);
+
+        // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
+        var mapOptions = {
+            zoom: 16,
+            center: Loc,
+            mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.RIGHT_CENTER
+        },
+            panControl: true,
+            panControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+        },
+            zoomControl: true,
+            zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.LARGE,
+            position: google.maps.ControlPosition.RIGHT_CENTER
+        },
+            scaleControl: true,  // fixed to BOTTOM_RIGHT
+            streetViewControl: true,
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+        }
+        };
+
+        // This makes the div with id "map_canvas" a google map
+        var map = new google.maps.Map(document.getElementById("map-container"), mapOptions);
+
+        // This shows adding a simple pin "marker" - this happens to be the Tate Gallery in Liverpool!
+        var myLatlng = new google.maps.LatLng(53.408841, -2.981397);
+
+        var marker = new google.maps.Marker({
+            position: Loc,
+            map: map,
+
+        });
+
+
+    }
+
+
+        </script>
+    </section>
+}
+
+<div class="row">
+    <div id="map-container" style="height:400px"></div>
+</div>
+
