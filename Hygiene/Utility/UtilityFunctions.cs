@@ -26,9 +26,13 @@ namespace Hygiene.Utility
         }
         public static int GetFHRSIDValue(XElement n)
         {
-            int outputValue = 0;
+            int outputValue;
             if (n.Element("FHRSID") != null)
-                outputValue = (int)n.Element("FHRSID");
+            { outputValue = (int)n.Element("FHRSID"); }
+            else
+            {
+                outputValue = 0;
+            }
             return outputValue;
         }
         public static string Addr1(XElement n)

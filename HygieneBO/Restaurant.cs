@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +10,11 @@ namespace HygieneBO
 {
     public class Restaurant
     {
-        public int RestaurantId { get; set; }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int FHRSID { get; set; }
         public virtual int? DistrictId { get; set; }
 
-        public int FHRSID { get; set; }
         public string BusinessName { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }

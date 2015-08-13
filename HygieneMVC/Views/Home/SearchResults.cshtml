@@ -7,6 +7,9 @@
 @{
     ViewBag.Title = "SearchResults";
 }
+@{int districtId;
+  string districtName;
+ }
 <div class="container">
     <div class="row margin-top-30">
         <div class="col-md-10">
@@ -21,8 +24,11 @@
         </div>
     </div>
 
+
+
     @foreach (var item in Model)
     {
+        
         <a href="@Url.Action("Details", "Home", new { id = item.FHRSID })" , style="text-decoration : none;">
             <div class="search-results">
                 <div class="row">
@@ -34,6 +40,7 @@
                         <div class="heading-info">@item.AddressLine3</div>
                         <div class="heading-info">@item.AddressLine4</div>
                         <div class="heading-info">@item.PostCode</div>
+
                     </div>
                     <div class="col-md-2">
                         <div class="search-results-image">

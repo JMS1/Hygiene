@@ -258,6 +258,14 @@
     <Compile Include="Migrations\201507131351074_MadeCheckSumChangedFieldNullable.Designer.cs">
       <DependentUpon>201507131351074_MadeCheckSumChangedFieldNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508121357190_MadeFHRSIDThePrimaryKeyInRestaurantsTable.cs" />
+    <Compile Include="Migrations\201508121357190_MadeFHRSIDThePrimaryKeyInRestaurantsTable.Designer.cs">
+      <DependentUpon>201508121357190_MadeFHRSIDThePrimaryKeyInRestaurantsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201508121548178_AddedDatabaseGeneratedAttributeToFHRSID.cs" />
+    <Compile Include="Migrations\201508121548178_AddedDatabaseGeneratedAttributeToFHRSID.Designer.cs">
+      <DependentUpon>201508121548178_AddedDatabaseGeneratedAttributeToFHRSID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -379,6 +387,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507131351074_MadeCheckSumChangedFieldNullable.resx">
       <DependentUpon>201507131351074_MadeCheckSumChangedFieldNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508121357190_MadeFHRSIDThePrimaryKeyInRestaurantsTable.resx">
+      <DependentUpon>201508121357190_MadeFHRSIDThePrimaryKeyInRestaurantsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508121548178_AddedDatabaseGeneratedAttributeToFHRSID.resx">
+      <DependentUpon>201508121548178_AddedDatabaseGeneratedAttributeToFHRSID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

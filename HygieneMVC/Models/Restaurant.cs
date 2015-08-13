@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,10 @@ namespace HygieneMVC.Models
 {
     public class Restaurant
     {
-        public int RestaurantId { get; set; }
-
+        [Key]
+        public int FHRSID { get; set; }
         public virtual int? DistrictId { get; set; }
 
-        public int FHRSID { get; set; }
         public string BusinessName { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }

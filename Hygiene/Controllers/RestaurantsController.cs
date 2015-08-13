@@ -46,7 +46,8 @@ namespace Hygiene.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != restaurant.RestaurantId)
+            //if (id != restaurant.RestaurantId)
+            if (id != restaurant.FHRSID)
             {
                 return BadRequest();
             }
@@ -84,7 +85,8 @@ namespace Hygiene.Controllers
             db.Restaurants.Add(restaurant);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = restaurant.RestaurantId }, restaurant);
+            //return CreatedAtRoute("DefaultApi", new { id = restaurant.RestaurantId }, restaurant);
+            return CreatedAtRoute("DefaultApi", new { id = restaurant.FHRSID }, restaurant);
         }
 
         // DELETE: api/Restaurants/5
@@ -114,7 +116,8 @@ namespace Hygiene.Controllers
 
         private bool RestaurantExists(int id)
         {
-            return db.Restaurants.Count(e => e.RestaurantId == id) > 0;
+            //return db.Restaurants.Count(e => e.RestaurantId == id) > 0;
+            return db.Restaurants.Count(e => e.FHRSID == id) > 0;
         }
     }
 }

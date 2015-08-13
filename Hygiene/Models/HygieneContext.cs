@@ -22,7 +22,6 @@ namespace Hygiene.Models
         }
 
         public DbSet<HygieneBO.Restaurant> Restaurants { get; set; }
-        //public DbSet<HygieneBO.CheckSumVersion> Versions { get; set; }
         public DbSet<HygieneBO.District> Districts { get; set; }
     
     }
