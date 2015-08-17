@@ -10,12 +10,11 @@
             <div class="homepage-text">
                 <img src="~/Images/fhrs.png" />
             </div>
-            <div class="row">
+            @*<div class="row">
                 <div class="homepage-text">
                     For London
                 </div>
-
-            </div>
+            </div>*@
             <div class="row">
                 <div class="test">
                     @using (Html.BeginForm("SearchResults", "Home", FormMethod.Post))
@@ -37,37 +36,5 @@
     </div>
   </div>  
 
-    @section scripts {
-
-        <section class="scripts">
-
-            <script type="text/javascript">
-            $(document).ready(function () {
-                $("#restaurantString").autocomplete({
-                    source: function (request, response) {
-                        $.ajax({
-                            url: "/Home/Search",
-                            type: "POST",
-                            dataType: "json",
-                            data: { term: request.term },
-                            success: function (data) {
-                                response($.map(data, function (item) {
-
-                                    return {
-                                        label: item.value,
-                                        value: item.label
-                                    };
-                                }
-                                ))
-                            }
-                        })
-                    },
-                    messages: {
-                        noResults: "", results: ""
-                    }
-                });
-            })
-            </script>
-        </section>
-    }
+    
 

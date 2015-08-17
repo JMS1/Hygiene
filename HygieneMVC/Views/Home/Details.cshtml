@@ -45,65 +45,53 @@
 
 @section scripts {
     <section class="scripts">
-
         <script type="text/javascript">
-
-    <!-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
-    $(document).ready(function () {
-        Initialize();
-    });
-
-    // Where all the fun happens
-    function Initialize() {
-
-        // Google has tweaked their interface somewhat - this tells the api to use that new UI
-        google.maps.visualRefresh = true;
-        var lat = @ViewData["Latitude"];
-        var lon = @ViewData["Longitude"];
-        var Loc = new google.maps.LatLng(lat, lon);
-
-        // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
-        var mapOptions = {
-            zoom: 16,
-            center: Loc,
-            mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-            position: google.maps.ControlPosition.RIGHT_CENTER
-        },
-            panControl: true,
-            panControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-        },
-            zoomControl: true,
-            zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.LARGE,
-            position: google.maps.ControlPosition.RIGHT_CENTER
-        },
-            scaleControl: true,  // fixed to BOTTOM_RIGHT
-            streetViewControl: true,
-            streetViewControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-        }
-        };
-
-        // This makes the div with id "map_canvas" a google map
-        var map = new google.maps.Map(document.getElementById("map-container"), mapOptions);
-
-        // This shows adding a simple pin "marker" - this happens to be the Tate Gallery in Liverpool!
-        var myLatlng = new google.maps.LatLng(53.408841, -2.981397);
-
-        var marker = new google.maps.Marker({
-            position: Loc,
-            map: map,
-
-        });
+            $(document).ready(function () {
+                Initialize();
+            });
 
 
-    }
+            function Initialize() {
+                google.maps.visualRefresh = true;
+                var lat = @ViewData["Latitude"];
+                var lon = @ViewData["Longitude"];
+                var Loc = new google.maps.LatLng(lat, lon);
+                var mapOptions = {
+                    zoom: 16,
+                    center: Loc,
+                    mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.RIGHT_CENTER
+                },
+                    panControl: true,
+                    panControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_CENTER
+                },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.RIGHT_CENTER
+                },
+                    scaleControl: true,  // fixed to BOTTOM_RIGHT
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_CENTER
+                }
+                };
+
+                var map = new google.maps.Map(document.getElementById("map-container"), mapOptions);
 
 
+                var myLatlng = new google.maps.LatLng(53.408841, -2.981397);
+
+                var marker = new google.maps.Marker({
+                    position: Loc,
+                    map: map,
+
+                });
+            }
         </script>
     </section>
 }

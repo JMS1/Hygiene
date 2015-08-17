@@ -13,38 +13,23 @@ namespace HygieneMVC.Controllers
     {
         public ActionResult Index()
         {
-            ////test
-            //HygieneContext db = new HygieneContext();
-            //IQueryable<Restaurant> Res = null;
-            //var rest = db.Restaurants.ToList();
-            //Res = rest.AsQueryable();
-
             return View();
         }
 
         public ActionResult SearchResults(string restaurantString, int? page)
         {
             HygieneContext db = new HygieneContext();
-
-            IQueryable<Restaurant> Res = null;
             var rest = db.Restaurants.ToList();
-            //Res = rest.AsQueryable();
 
             if (String.IsNullOrEmpty(restaurantString))
             {
-                restaurantString = "No value passed";
+                restaurantString = "No search term";
             }
 
-
-
-            ViewData["SearchTerm"] = restaurantString;
-
-
-
             var restaurantList = rest.Where(s => s.BusinessName.ToLower().Contains(restaurantString.ToLower())).ToList();
-            //var restaurantList = qy.Where(s => s.BusinessName.ToLower().Contains(restaurantString.ToLower())).ToList();
             var filteredRes = restaurantList.AsQueryable();
 
+            ViewData["SearchTerm"] = restaurantString;
             ViewData["Count"] = restaurantList.Count();
 
             int pageSize = 10;
@@ -52,7 +37,6 @@ namespace HygieneMVC.Controllers
             ViewBag.search = restaurantString;
 
             return View(filteredRes.ToPagedList(pageNumber, pageSize));
-
         }
 
         public ActionResult Details(int? id)
