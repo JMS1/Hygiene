@@ -1,6 +1,8 @@
 ﻿@model HygieneMVC.Models.Restaurant
 @{
     ViewBag.Title = "Details";
+    int districtId = (int)Model.DistrictId;
+    string districtName = HygieneMVC.Utility.UtilityFunctions.SetDistrictIdFromString(districtId);
 }
 <div class="container">
     <div class="row" style=" padding-top:20px;">
@@ -26,7 +28,7 @@
         </div>
         <div class="col-md-2">
             <div class="heading-info">Reviewed on @Model.RatingDate</div>
-            @*<div class="heading-info">by @Model.LocalAuthorityName council</div>*@
+            <div class="heading-info">@districtName</div>
         </div>
     </div>
 

@@ -21,14 +21,19 @@
         </div>
     </div>
 
+    
+
     @foreach (var item in Model)
     {
+        int districtId = (int)item.DistrictId;
+        string districtName = HygieneMVC.Utility.UtilityFunctions.SetDistrictIdFromString(districtId);
+        
         <a href="@Url.Action("Details", "Home", new { id = item.FHRSID })" , style="text-decoration : none;">
             <div class="search-results">
                 <div class="row">
                     <div class="col-md-10">
                         <div class="heading">@item.BusinessName</div>
-                        @*<div class="heading-info">@item.LocalAuthorityName</div>*@
+                        <div class="heading-info">@districtName</div>
                         <div class="heading-info">@item.AddressLine1</div>
                         <div class="heading-info">@item.AddressLine2</div>
                         <div class="heading-info">@item.AddressLine3</div>
